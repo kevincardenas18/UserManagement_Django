@@ -25,4 +25,7 @@ urlpatterns = [
     path('welcome/<int:user_id>', views.welcome, name = 'welcome'),
     path('logout/', views.singout, name = 'logout'),
     path('login/', views.singin, name = 'login'),
+    path('profile/<int:user_id>', views.profile, name = 'profile'),
+    path('successfull', views.successfull, name = 'successfull'),
+    path('profile/deleteUser/<int:user_id>', views.deleteUser),
 ]
