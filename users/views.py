@@ -87,4 +87,4 @@ def successfull(request):
 def administrador(request):
     return render(request, 'administrador.html')
 
-        
+
