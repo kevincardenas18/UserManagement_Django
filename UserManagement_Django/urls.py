@@ -28,4 +28,5 @@ urlpatterns = [
     path('profile/<int:user_id>', views.profile, name = 'profile'),
     path('successfull', views.successfull, name = 'successfull'),
     path('profile/deleteUser/<int:user_id>', views.deleteUser),
+    path('administrador/', views.administrador, name = 'administrador'),
 ]

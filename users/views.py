@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 
 
@@ -81,5 +81,10 @@ def deleteUser(request, user_id):
 
 def successfull(request):
     return render(request, 'successfull.html')  
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def administrador(request):
+    return render(request, 'administrador.html')
 
         
